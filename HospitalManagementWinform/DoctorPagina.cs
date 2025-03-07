@@ -24,7 +24,6 @@ namespace HospitalManagementWinform
         public string CollegedNumber { get; set; }
         public List<Patient> Patient { get; set; }
 
-
         public DoctorPagina(string name, string age, string dni, string specialty, string collegedNumber)
         {
             InitializeComponent();
@@ -40,9 +39,9 @@ namespace HospitalManagementWinform
         private void button1_Click(object sender, EventArgs e)
         {
          
-            GuardarForm = new GuardarForm();
-            GuardarForm.ShowDialog();
-            object save = form3.AddDoctor();
+            GuardarForm form = new GuardarForm();
+            form.ShowDialog();
+          
 
 
         }

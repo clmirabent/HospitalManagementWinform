@@ -1,6 +1,6 @@
 ﻿namespace HospitalManagementWinform
 {
-    partial class Form3
+    partial class GuardarForm
     {
         /// <summary>
         /// Required designer variable.

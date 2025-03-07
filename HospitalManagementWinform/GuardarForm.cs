@@ -10,14 +10,15 @@ using System.Windows.Forms;
 
 namespace HospitalManagementWinform
 {
-    public partial class Form3 : Form
+    public partial class GuardarForm : Form
     {
-        public Form3()
+        public GuardarForm()
         {
             InitializeComponent();
         }
 
-    
+        
+
         private void label6_Click(object sender, EventArgs e)
         {
 
