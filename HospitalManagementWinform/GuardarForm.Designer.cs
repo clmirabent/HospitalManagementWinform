@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,12 +37,24 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
-            this.ageBox = new System.Windows.Forms.TextBox();
             this.dniBox = new System.Windows.Forms.TextBox();
             this.numberBox = new System.Windows.Forms.TextBox();
             this.specialityBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.ageBox = new System.Windows.Forms.NumericUpDown();
+            this.nameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ageErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dniErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.collegeNumberErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.specialityErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cancelButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ageErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dniErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collegeNumberErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specialityErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -63,7 +76,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "ADDING DOCTOR...";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label1
             // 
@@ -122,13 +134,6 @@
             this.nameBox.Size = new System.Drawing.Size(100, 20);
             this.nameBox.TabIndex = 6;
             // 
-            // ageBox
-            // 
-            this.ageBox.Location = new System.Drawing.Point(169, 198);
-            this.ageBox.Name = "ageBox";
-            this.ageBox.Size = new System.Drawing.Size(100, 20);
-            this.ageBox.TabIndex = 7;
-            // 
             // dniBox
             // 
             this.dniBox.Location = new System.Drawing.Point(169, 253);
@@ -154,24 +159,64 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(306, 324);
+            this.button1.Location = new System.Drawing.Point(415, 332);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 39);
             this.button1.TabIndex = 11;
             this.button1.Text = "SAVE";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.onSaveDoctor);
             // 
-            // Form3
+            // ageBox
+            // 
+            this.ageBox.Location = new System.Drawing.Point(169, 196);
+            this.ageBox.Name = "ageBox";
+            this.ageBox.Size = new System.Drawing.Size(100, 20);
+            this.ageBox.TabIndex = 12;
+            // 
+            // nameErrorProvider
+            // 
+            this.nameErrorProvider.ContainerControl = this;
+            // 
+            // ageErrorProvider
+            // 
+            this.ageErrorProvider.ContainerControl = this;
+            // 
+            // dniErrorProvider
+            // 
+            this.dniErrorProvider.ContainerControl = this;
+            // 
+            // collegeNumberErrorProvider
+            // 
+            this.collegeNumberErrorProvider.ContainerControl = this;
+            // 
+            // specialityErrorProvider
+            // 
+            this.specialityErrorProvider.ContainerControl = this;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.Location = new System.Drawing.Point(223, 332);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(132, 39);
+            this.cancelButton.TabIndex = 13;
+            this.cancelButton.Text = "CANCEL";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // GuardarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.ageBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.specialityBox);
             this.Controls.Add(this.numberBox);
             this.Controls.Add(this.dniBox);
-            this.Controls.Add(this.ageBox);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -179,10 +224,16 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form3";
-            this.Text = "Form3";
+            this.Name = "GuardarForm";
+            this.Text = "Doctor";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ageErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dniErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collegeNumberErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specialityErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,11 +248,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox nameBox;
-        private System.Windows.Forms.TextBox ageBox;
         private System.Windows.Forms.TextBox dniBox;
         private System.Windows.Forms.TextBox numberBox;
         private System.Windows.Forms.TextBox specialityBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown ageBox;
+        private System.Windows.Forms.ErrorProvider nameErrorProvider;
+        private System.Windows.Forms.ErrorProvider ageErrorProvider;
+        private System.Windows.Forms.ErrorProvider dniErrorProvider;
+        private System.Windows.Forms.ErrorProvider collegeNumberErrorProvider;
+        private System.Windows.Forms.ErrorProvider specialityErrorProvider;
+        private System.Windows.Forms.Button cancelButton;
     }
 }

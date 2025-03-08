@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,40 +11,44 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using HospitalManagement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HospitalManagementWinform
 {
     public partial class DoctorPagina : Form
     {
-        public string Name { get; set; }
-        public string Age { get; set; }
-        public string Dni { get; set; }
-        public string Specialty { get; set; }
-        public string CollegedNumber { get; set; }
-        public List<Patient> Patient { get; set; }
+        private Hospital _hospital;
+        private BindingSource _doctorsSource = new BindingSource();
 
-        public DoctorPagina(string name, string age, string dni, string specialty, string collegedNumber)
+        public DoctorPagina(Hospital hospital)
         {
             InitializeComponent();
-            Name = name;
-            Age = age;
-            Dni = dni;
-            Specialty = specialty;
-            CollegedNumber = collegedNumber;
-            Patient = new List<Patient>();
+            _hospital = hospital;
 
+            // Doctor list bindign setup
+            _doctorsSource.DataSource = _hospital.Doctors;
+            doctorList.DataSource = _doctorsSource;
+
+            doctorsCount.Text = _hospital.Doctors.Count.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
-            GuardarForm form = new GuardarForm();
+            GuardarForm form = new GuardarForm(addDoctorToHospitalAndUpdateList);
             form.ShowDialog();
-          
+        }
 
+        private void onSelectDoctorIndex(object sender, EventArgs e)
+        {
 
+        }
+
+        private void addDoctorToHospitalAndUpdateList(Doctor doctor)
+        {
+            _hospital.AddDoctor(doctor);
+            _doctorsSource.ResetBindings(false);
+
+            doctorsCount.Text = _hospital.Doctors.Count.ToString();
         }
     }
 }

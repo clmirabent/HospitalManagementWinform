@@ -29,27 +29,33 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.editButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.doctorList = new System.Windows.Forms.ListBox();
+            this.doctorsCount = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-1, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(802, 93);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // flowLayoutPanel2
+            // label1
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(8, 14);
-            this.flowLayoutPanel2.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "DOCTOR DETAILS";
             // 
             // button1
             // 
@@ -63,38 +69,74 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // listBox1
+            // editButton
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Marcos Martinez Perez -- 45 años -- 987654Y -- Medicina Interna --- 1234",
-            "",
-            "Teresa Perez Perez -- 56 años -- 123456Y -- Traumatologo --- 4321"});
-            this.listBox1.Location = new System.Drawing.Point(407, 110);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(368, 264);
-            this.listBox1.TabIndex = 3;
+            this.editButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.Location = new System.Drawing.Point(70, 226);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(100, 30);
+            this.editButton.TabIndex = 4;
+            this.editButton.Text = "EDIT DOCTOR";
+            this.editButton.UseVisualStyleBackColor = false;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.Location = new System.Drawing.Point(70, 289);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(100, 29);
+            this.deleteButton.TabIndex = 5;
+            this.deleteButton.Text = "DELETE";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            // 
+            // doctorList
+            // 
+            this.doctorList.FormattingEnabled = true;
+            this.doctorList.Location = new System.Drawing.Point(299, 113);
+            this.doctorList.Name = "doctorList";
+            this.doctorList.Size = new System.Drawing.Size(471, 303);
+            this.doctorList.TabIndex = 7;
+            this.doctorList.SelectedIndexChanged += new System.EventHandler(this.onSelectDoctorIndex);
+            // 
+            // doctorsCount
+            // 
+            this.doctorsCount.AutoSize = true;
+            this.doctorsCount.Location = new System.Drawing.Point(258, 403);
+            this.doctorsCount.Name = "doctorsCount";
+            this.doctorsCount.Size = new System.Drawing.Size(35, 13);
+            this.doctorsCount.TabIndex = 8;
+            this.doctorsCount.Text = "label2";
             // 
             // DoctorPagina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.doctorsCount);
+            this.Controls.Add(this.doctorList);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "DoctorPagina";
-            this.Text = "Form2";
+            this.Text = "Doctor";
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.ListBox doctorList;
+        private System.Windows.Forms.Label doctorsCount;
     }
 }

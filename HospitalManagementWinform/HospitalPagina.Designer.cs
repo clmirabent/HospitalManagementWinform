@@ -35,9 +35,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.userButton = new System.Windows.Forms.Button();
+            this.adminButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -114,26 +114,6 @@
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(353, 133);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "USER";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(493, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "ADMIN STAFF";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(149, 285);
@@ -144,19 +124,38 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // userButton
+            // 
+            this.userButton.Location = new System.Drawing.Point(329, 285);
+            this.userButton.Name = "userButton";
+            this.userButton.Size = new System.Drawing.Size(75, 23);
+            this.userButton.TabIndex = 8;
+            this.userButton.Text = "PATIENT";
+            this.userButton.UseVisualStyleBackColor = true;
+            this.userButton.Click += new System.EventHandler(this.userButton_Click);
+            // 
+            // adminButton
+            // 
+            this.adminButton.Location = new System.Drawing.Point(503, 284);
+            this.adminButton.Name = "adminButton";
+            this.adminButton.Size = new System.Drawing.Size(75, 23);
+            this.adminButton.TabIndex = 9;
+            this.adminButton.Text = "ADMIN";
+            this.adminButton.UseVisualStyleBackColor = true;
+            // 
+            // HospitalPagina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 571);
+            this.Controls.Add(this.adminButton);
+            this.Controls.Add(this.userButton);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form1";
+            this.Name = "HospitalPagina";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -166,7 +165,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -178,9 +176,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button userButton;
+        private System.Windows.Forms.Button adminButton;
     }
 }
 

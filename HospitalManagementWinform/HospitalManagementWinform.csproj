@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>HospitalManagementWinform</RootNamespace>
     <AssemblyName>HospitalManagementWinform</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,9 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin staff.cs" />
-    <Compile Include="Clinical history.cs" />
-    <Compile Include="Doctor.cs" />
+    <Compile Include="PatientPagina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientPagina.Designer.cs">
+      <DependentUpon>PatientPagina.cs</DependentUpon>
+    </Compile>
     <Compile Include="HospitalPagina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,9 +71,6 @@
     <Compile Include="GuardarForm.Designer.cs">
       <DependentUpon>GuardarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hospital.cs" />
-    <Compile Include="Patient.cs" />
-    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="HospitalPagina.resx">
@@ -81,6 +82,9 @@
     <EmbeddedResource Include="GuardarForm.resx">
       <DependentUpon>GuardarForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PatientPagina.resx">
+      <DependentUpon>PatientPagina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -89,6 +93,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HospitalManagement\HospitalManagement\HospitalManagement.csproj">
+      <Project>{e2b82d00-237f-43fc-bf03-72599cb40e6f}</Project>
+      <Name>HospitalManagement</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
