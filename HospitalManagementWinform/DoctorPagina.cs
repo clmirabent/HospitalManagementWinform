@@ -32,23 +32,56 @@ namespace HospitalManagementWinform
             doctorsCount.Text = _hospital.Doctors.Count.ToString();
         }
 
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            Doctor selectedDoctor = (Doctor)doctorList.SelectedItem;
+            if(selectedDoctor is null)
+            {
+                return;
+            }
+
+            
+            if(!_hospital.TryRemoveDoctor(selectedDoctor.Dni, out string error))
+            {
+                MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            _doctorsSource.ResetBindings(false);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            GuardarForm form = new GuardarForm(addDoctorToHospitalAndUpdateList);
+            DoctorForm form = new DoctorForm(null, doctor =>
+            {
+                _hospital.AddDoctor(doctor);
+                _doctorsSource.ResetBindings(false);
+
+                doctorsCount.Text = _hospital.Doctors.Count.ToString();
+            });
             form.ShowDialog();
         }
 
-        private void onSelectDoctorIndex(object sender, EventArgs e)
+        private void onEditDoctor_click(object sender, EventArgs args)
         {
+            Doctor selectedDoctor = (Doctor)doctorList.SelectedItem;
 
-        }
+            if (selectedDoctor is null)
+            {
+                return;
+            }
 
-        private void addDoctorToHospitalAndUpdateList(Doctor doctor)
-        {
-            _hospital.AddDoctor(doctor);
-            _doctorsSource.ResetBindings(false);
+            DoctorForm form = new DoctorForm(selectedDoctor, doctor =>
+            {
+                if(!_hospital.TryModifyDoctor(selectedDoctor.Dni, doctor, out Doctor modifiedDoctor, out string error))
+                {
+                    MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                _doctorsSource.ResetBindings(false);
+            });
 
-            doctorsCount.Text = _hospital.Doctors.Count.ToString();
-        }
+            form.ShowDialog();
+        }               
     }
 }

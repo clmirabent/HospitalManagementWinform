@@ -12,14 +12,22 @@ using System.Windows.Forms;
 
 namespace HospitalManagementWinform
 {
-    public partial class GuardarForm : Form
+    public partial class DoctorForm : Form
     {
-        private Action<Doctor> _addDoctorToHospital;
+        private Action<Doctor> _onSaveAction;
 
-        public GuardarForm(Action<Doctor> addDoctorToHospital)
+        public DoctorForm(Doctor doctor, Action<Doctor> onSaveAction)
         {
             InitializeComponent();
-            _addDoctorToHospital = addDoctorToHospital;
+            if (doctor != null)
+            {
+                nameBox.Text = doctor.Name;
+                ageBox.Value = doctor.Age;
+                dniBox.Text = doctor.Dni;
+                numberBox.Text = doctor.CollegedNumber;
+                specialityBox.Text = doctor.Specialty;
+            }
+            _onSaveAction = onSaveAction;
         }
 
         private void onSaveDoctor(object sender, EventArgs args)
@@ -62,7 +70,7 @@ namespace HospitalManagementWinform
             if (isValidated)
             {
                 Doctor newDoctor = new Doctor(nameBox.Text, (int)ageBox.Value, dniBox.Text, specialityBox.Text, numberBox.Text);
-                _addDoctorToHospital(newDoctor);
+                _onSaveAction(newDoctor);
                 MessageBox.Show("Doctor " + nameBox.Text + " created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }

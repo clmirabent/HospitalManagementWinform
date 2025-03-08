@@ -79,6 +79,7 @@
             this.editButton.TabIndex = 4;
             this.editButton.Text = "EDIT DOCTOR";
             this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.onEditDoctor_click);
             // 
             // deleteButton
             // 
@@ -90,6 +91,7 @@
             this.deleteButton.TabIndex = 5;
             this.deleteButton.Text = "DELETE";
             this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // doctorList
             // 
@@ -98,7 +100,6 @@
             this.doctorList.Name = "doctorList";
             this.doctorList.Size = new System.Drawing.Size(471, 303);
             this.doctorList.TabIndex = 7;
-            this.doctorList.SelectedIndexChanged += new System.EventHandler(this.onSelectDoctorIndex);
             // 
             // doctorsCount
             // 

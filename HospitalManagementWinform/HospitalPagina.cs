@@ -53,5 +53,6 @@ namespace HospitalManagementWinform
             PatientPagina form3 = new PatientPagina();
             form3.Show();
         }
+
     }
 }
