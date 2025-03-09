@@ -48,7 +48,7 @@ namespace HospitalManagementWinform
         {
             Patient selectedPatient = (Patient)patientsList.SelectedItem;
             Doctor doctorAssigned = selectedPatient.DoctorAssigned;
-
+             
             if (selectedPatient is null)
             {
                 return;
@@ -63,5 +63,27 @@ namespace HospitalManagementWinform
             _patientsSource.ResetBindings(false);
         }
 
+        private void editPatientButton_Click(object sender, EventArgs e)
+        {
+            Patient selectedPatient = (Patient)patientsList.SelectedItem;
+
+            if (selectedPatient is null)
+            {
+                return;
+            }
+
+            PatientForm form = new PatientForm(selectedPatient, _hospital.Doctors, patient =>
+            {
+                if (!_hospital.TryModifyPatient(selectedPatient.Dni, patient, out Patient modifiedPatient, out string error))
+                {
+                    MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                _patientsSource.ResetBindings(false);
+            });
+
+            form.ShowDialog();
         }
     }
+    }
+    

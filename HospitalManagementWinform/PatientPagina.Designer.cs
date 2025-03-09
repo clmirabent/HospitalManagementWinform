@@ -66,6 +66,7 @@
             this.editPatientButton.TabIndex = 2;
             this.editPatientButton.Text = "EDIT PATIENT";
             this.editPatientButton.UseVisualStyleBackColor = false;
+            this.editPatientButton.Click += new System.EventHandler(this.editPatientButton_Click);
             // 
             // deletePatientButton
             // 
