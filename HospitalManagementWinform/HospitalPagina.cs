@@ -22,6 +22,7 @@ namespace HospitalManagementWinform
         {
             InitializeComponent();
             _hospital = new Hospital();
+            _hospital.AddDoctor(new Doctor("Julio", 61, "123456789T", "Pediatria", "weqrfgd"));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace HospitalManagementWinform
 
         private void userButton_Click(object sender, EventArgs e)
         {
-            PatientPagina form3 = new PatientPagina();
+            PatientPagina form3 = new PatientPagina(_hospital);
             form3.Show();
         }
 

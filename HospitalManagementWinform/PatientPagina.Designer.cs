@@ -32,7 +32,8 @@
             this.addPatientButton = new System.Windows.Forms.Button();
             this.editPatientButton = new System.Windows.Forms.Button();
             this.deletePatientButton = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.patientsCount = new System.Windows.Forms.Label();
+            this.patientsList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -53,6 +54,7 @@
             this.addPatientButton.TabIndex = 1;
             this.addPatientButton.Text = "ADD PATIENT";
             this.addPatientButton.UseVisualStyleBackColor = false;
+            this.addPatientButton.Click += new System.EventHandler(this.addPatientButton_Click);
             // 
             // editPatientButton
             // 
@@ -75,22 +77,32 @@
             this.deletePatientButton.TabIndex = 3;
             this.deletePatientButton.Text = "DELETE PATIENT";
             this.deletePatientButton.UseVisualStyleBackColor = false;
+            this.deletePatientButton.Click += new System.EventHandler(this.deletePatientButton_Click);
             // 
-            // listView1
+            // patientsCount
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(351, 113);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(408, 296);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.patientsCount.AutoSize = true;
+            this.patientsCount.Location = new System.Drawing.Point(310, 395);
+            this.patientsCount.Name = "patientsCount";
+            this.patientsCount.Size = new System.Drawing.Size(35, 13);
+            this.patientsCount.TabIndex = 5;
+            this.patientsCount.Text = "label1";
+            // 
+            // patientsList
+            // 
+            this.patientsList.FormattingEnabled = true;
+            this.patientsList.Location = new System.Drawing.Point(365, 117);
+            this.patientsList.Name = "patientsList";
+            this.patientsList.Size = new System.Drawing.Size(406, 290);
+            this.patientsList.TabIndex = 6;
             // 
             // PatientPagina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.patientsList);
+            this.Controls.Add(this.patientsCount);
             this.Controls.Add(this.deletePatientButton);
             this.Controls.Add(this.editPatientButton);
             this.Controls.Add(this.addPatientButton);
@@ -98,6 +110,7 @@
             this.Name = "PatientPagina";
             this.Text = "PATIENT";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,6 +120,7 @@
         private System.Windows.Forms.Button addPatientButton;
         private System.Windows.Forms.Button editPatientButton;
         private System.Windows.Forms.Button deletePatientButton;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label patientsCount;
+        private System.Windows.Forms.ListBox patientsList;
     }
 }
