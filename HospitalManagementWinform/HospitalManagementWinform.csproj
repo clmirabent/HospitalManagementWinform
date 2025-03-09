@@ -53,23 +53,23 @@
     <Compile Include="PatientForm.Designer.cs">
       <DependentUpon>PatientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PatientPagina.cs">
+    <Compile Include="PatientPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PatientPagina.Designer.cs">
-      <DependentUpon>PatientPagina.cs</DependentUpon>
+    <Compile Include="PatientPage.Designer.cs">
+      <DependentUpon>PatientPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="HospitalPagina.cs">
+    <Compile Include="HospitalPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HospitalPagina.Designer.cs">
-      <DependentUpon>HospitalPagina.cs</DependentUpon>
+    <Compile Include="HospitalPage.Designer.cs">
+      <DependentUpon>HospitalPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoctorPagina.cs">
+    <Compile Include="DoctorPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorPagina.Designer.cs">
-      <DependentUpon>DoctorPagina.cs</DependentUpon>
+    <Compile Include="DoctorPage.Designer.cs">
+      <DependentUpon>DoctorPage.cs</DependentUpon>
     </Compile>
     <Compile Include="DoctorForm.cs">
       <SubType>Form</SubType>
@@ -79,11 +79,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="HospitalPagina.resx">
-      <DependentUpon>HospitalPagina.cs</DependentUpon>
+    <EmbeddedResource Include="HospitalPage.resx">
+      <DependentUpon>HospitalPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoctorPagina.resx">
-      <DependentUpon>DoctorPagina.cs</DependentUpon>
+    <EmbeddedResource Include="DoctorPage.resx">
+      <DependentUpon>DoctorPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorForm.resx">
       <DependentUpon>DoctorForm.cs</DependentUpon>
@@ -91,8 +91,8 @@
     <EmbeddedResource Include="PatientForm.resx">
       <DependentUpon>PatientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PatientPagina.resx">
-      <DependentUpon>PatientPagina.cs</DependentUpon>
+    <EmbeddedResource Include="PatientPage.resx">
+      <DependentUpon>PatientPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

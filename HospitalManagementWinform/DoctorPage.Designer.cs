@@ -1,6 +1,6 @@
 ﻿namespace HospitalManagementWinform
 {
-    partial class DoctorPagina
+    partial class DoctorPage
     {
         /// <summary>
         /// Required designer variable.

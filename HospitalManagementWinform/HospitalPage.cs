@@ -14,15 +14,18 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HospitalManagementWinform
 {
-    public partial class HospitalPagina : Form
+    public partial class HospitalPage : Form
     {
         private Hospital _hospital;
 
-        public HospitalPagina()
+        public HospitalPage()
         {
             InitializeComponent();
             _hospital = new Hospital();
-            _hospital.AddDoctor(new Doctor("Julio", 61, "123456789T", "Pediatria", "weqrfgd"));
+            _hospital.AddDoctor(new Doctor($"Julio", 61, "DNI: 123456789T", "Specialty: Pediatria", "44356765"));
+            _hospital.AddDoctor(new Doctor($"Name: Marta", 38, "DNI: 987654321U", "Speciality: Terapia", "College Number: 0556795"));
+            _hospital.AddDoctor(new Doctor($"Name: Eduardo", 55, "DNI: 086660987U", "Speciality: Traumatologia", "College Number: 0556795"));
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,13 +33,7 @@ namespace HospitalManagementWinform
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-       
+  
 
         private void label1_Click_2(object sender, EventArgs e)
         {
@@ -45,13 +42,13 @@ namespace HospitalManagementWinform
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DoctorPagina form2 = new DoctorPagina(_hospital);
+            DoctorPage form2 = new DoctorPage(_hospital);
             form2.Show();
         }
 
         private void userButton_Click(object sender, EventArgs e)
         {
-            PatientPagina form3 = new PatientPagina(_hospital);
+            PatientPage form3 = new PatientPage(_hospital);
             form3.Show();
         }
 

@@ -15,12 +15,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HospitalManagementWinform
 {
-    public partial class DoctorPagina : Form
+    public partial class DoctorPage : Form
     {
         private Hospital _hospital;
         private BindingSource _doctorsSource = new BindingSource();
 
-        public DoctorPagina(Hospital hospital)
+        public DoctorPage(Hospital hospital)
         {
             InitializeComponent();
             _hospital = hospital;

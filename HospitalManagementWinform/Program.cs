@@ -16,7 +16,7 @@ namespace HospitalManagementWinform
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HospitalPagina());
+            Application.Run(new HospitalPage());
         }
     }
 }

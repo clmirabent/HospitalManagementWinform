@@ -16,12 +16,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace HospitalManagementWinform
 {
     
-    public partial class PatientPagina: Form
+    public partial class PatientPage: Form
     {
         private Hospital _hospital;
         private BindingSource _patientsSource = new BindingSource();
 
-        public PatientPagina(Hospital hospital)
+        public PatientPage(Hospital hospital)
         {
             InitializeComponent();
             _hospital = hospital;
