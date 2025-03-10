@@ -35,10 +35,7 @@ namespace HospitalManagementWinform
 
   
 
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+ 
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -52,5 +49,10 @@ namespace HospitalManagementWinform
             form3.Show();
         }
 
+        private void adminButton_Click(object sender, EventArgs e)
+        {
+            AdminPage form4 = new AdminPage(_hospital);
+            form4.Show();
+        }
     }
 }
