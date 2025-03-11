@@ -65,6 +65,7 @@
             this.editButton.TabIndex = 2;
             this.editButton.Text = "EDIT";
             this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // deleteButton
             // 
@@ -76,6 +77,7 @@
             this.deleteButton.TabIndex = 3;
             this.deleteButton.Text = "DELETE";
             this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // adminList
             // 

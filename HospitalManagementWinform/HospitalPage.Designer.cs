@@ -65,7 +65,6 @@
             this.label1.Size = new System.Drawing.Size(19, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "X";
-        
             // 
             // label2
             // 
@@ -142,8 +141,9 @@
             this.adminButton.TabIndex = 9;
             this.adminButton.Text = "ADMIN";
             this.adminButton.UseVisualStyleBackColor = true;
+            this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
             // 
-            // HospitalPagina
+            // HospitalPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,7 +155,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "HospitalPagina";
+            this.Name = "HospitalPage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

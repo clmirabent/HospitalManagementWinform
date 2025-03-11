@@ -28,7 +28,57 @@ namespace HospitalManagementWinform
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            AdminForm form = new AdminForm(null, admin =>
+            {
+                _hospital.AddAdmin_staff(admin);
+               
+                _adminSource.ResetBindings(false);
 
+            });
+            form.ShowDialog();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            AdminStaff selectedAdmin = (AdminStaff)adminList.SelectedItem;
+
+            if (selectedAdmin is null)
+            {
+                return;
+            }
+
+            AdminForm form = new AdminForm(selectedAdmin, admin =>
+            {
+                if (!_hospital.TryModifyAdmin(selectedAdmin.Dni, admin, out AdminStaff modifiedAdmin, out string error))
+                {
+                    MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                _adminSource.ResetBindings(false);
+            });
+
+            form.ShowDialog();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            AdminStaff selectedAdmin = (AdminStaff)adminList.SelectedItem;
+            if (selectedAdmin is null)
+            {
+                return;
+            }
+
+
+            if (!_hospital.TryRemoveAdmin(selectedAdmin.Dni, out string error))
+            {
+                MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            _adminSource.ResetBindings(false);
         }
     }
-}
+    }
+    
+ 
+
