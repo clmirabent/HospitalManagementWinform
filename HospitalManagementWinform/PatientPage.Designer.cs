@@ -32,7 +32,6 @@
             this.addPatientButton = new System.Windows.Forms.Button();
             this.editPatientButton = new System.Windows.Forms.Button();
             this.deletePatientButton = new System.Windows.Forms.Button();
-            this.patientsCount = new System.Windows.Forms.Label();
             this.patientsList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -80,15 +79,6 @@
             this.deletePatientButton.UseVisualStyleBackColor = false;
             this.deletePatientButton.Click += new System.EventHandler(this.deletePatientButton_Click);
             // 
-            // patientsCount
-            // 
-            this.patientsCount.AutoSize = true;
-            this.patientsCount.Location = new System.Drawing.Point(310, 395);
-            this.patientsCount.Name = "patientsCount";
-            this.patientsCount.Size = new System.Drawing.Size(35, 13);
-            this.patientsCount.TabIndex = 5;
-            this.patientsCount.Text = "label1";
-            // 
             // patientsList
             // 
             this.patientsList.FormattingEnabled = true;
@@ -97,21 +87,19 @@
             this.patientsList.Size = new System.Drawing.Size(406, 290);
             this.patientsList.TabIndex = 6;
             // 
-            // PatientPagina
+            // PatientPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.patientsList);
-            this.Controls.Add(this.patientsCount);
             this.Controls.Add(this.deletePatientButton);
             this.Controls.Add(this.editPatientButton);
             this.Controls.Add(this.addPatientButton);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "PatientPagina";
+            this.Name = "PatientPage";
             this.Text = "PATIENT";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -121,7 +109,6 @@
         private System.Windows.Forms.Button addPatientButton;
         private System.Windows.Forms.Button editPatientButton;
         private System.Windows.Forms.Button deletePatientButton;
-        private System.Windows.Forms.Label patientsCount;
         private System.Windows.Forms.ListBox patientsList;
     }
 }

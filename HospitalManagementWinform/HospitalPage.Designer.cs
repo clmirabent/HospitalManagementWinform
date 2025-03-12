@@ -38,10 +38,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.userButton = new System.Windows.Forms.Button();
             this.adminButton = new System.Windows.Forms.Button();
+            this.AppointmentPictureBox = new System.Windows.Forms.PictureBox();
+            this.appointmentButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AppointmentPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -115,39 +118,71 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(149, 285);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
             this.button1.Text = "DOCTOR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // userButton
             // 
+            this.userButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.userButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userButton.Location = new System.Drawing.Point(329, 285);
             this.userButton.Name = "userButton";
             this.userButton.Size = new System.Drawing.Size(75, 23);
             this.userButton.TabIndex = 8;
             this.userButton.Text = "PATIENT";
-            this.userButton.UseVisualStyleBackColor = true;
+            this.userButton.UseVisualStyleBackColor = false;
             this.userButton.Click += new System.EventHandler(this.userButton_Click);
             // 
             // adminButton
             // 
+            this.adminButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.adminButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminButton.Location = new System.Drawing.Point(503, 284);
             this.adminButton.Name = "adminButton";
             this.adminButton.Size = new System.Drawing.Size(75, 23);
             this.adminButton.TabIndex = 9;
             this.adminButton.Text = "ADMIN";
-            this.adminButton.UseVisualStyleBackColor = true;
+            this.adminButton.UseVisualStyleBackColor = false;
             this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
+            // 
+            // AppointmentPictureBox
+            // 
+            this.AppointmentPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.AppointmentPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AppointmentPictureBox.Image")));
+            this.AppointmentPictureBox.Location = new System.Drawing.Point(317, 374);
+            this.AppointmentPictureBox.Name = "AppointmentPictureBox";
+            this.AppointmentPictureBox.Size = new System.Drawing.Size(102, 88);
+            this.AppointmentPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AppointmentPictureBox.TabIndex = 10;
+            this.AppointmentPictureBox.TabStop = false;
+            // 
+            // appointmentButton
+            // 
+            this.appointmentButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.appointmentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointmentButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.appointmentButton.Location = new System.Drawing.Point(317, 496);
+            this.appointmentButton.Name = "appointmentButton";
+            this.appointmentButton.Size = new System.Drawing.Size(106, 30);
+            this.appointmentButton.TabIndex = 11;
+            this.appointmentButton.Text = "APPOINTMENT";
+            this.appointmentButton.UseVisualStyleBackColor = false;
+            this.appointmentButton.Click += new System.EventHandler(this.appointmentButton_Click);
             // 
             // HospitalPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 571);
+            this.Controls.Add(this.appointmentButton);
+            this.Controls.Add(this.AppointmentPictureBox);
             this.Controls.Add(this.adminButton);
             this.Controls.Add(this.userButton);
             this.Controls.Add(this.button1);
@@ -164,6 +199,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AppointmentPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -179,6 +215,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button userButton;
         private System.Windows.Forms.Button adminButton;
+        private System.Windows.Forms.PictureBox AppointmentPictureBox;
+        private System.Windows.Forms.Button appointmentButton;
     }
 }
 

@@ -54,5 +54,11 @@ namespace HospitalManagementWinform
             AdminPage form4 = new AdminPage(_hospital);
             form4.Show();
         }
+
+        private void appointmentButton_Click(object sender, EventArgs e)
+        {
+            AppointmentPage form5 = new AppointmentPage(_hospital);
+            form5.Show();
+        }
     }
 }

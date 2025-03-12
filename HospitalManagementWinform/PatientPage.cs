@@ -29,8 +29,6 @@ namespace HospitalManagementWinform
             // Patient list bindign setup
             _patientsSource.DataSource = _hospital.Patients;
             patientsList.DataSource = _patientsSource;
-
-            patientsCount.Text = _hospital.Patients.Count.ToString();
         }
 
         private void addPatientButton_Click(object sender, EventArgs e)
