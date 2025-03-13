@@ -1,4 +1,4 @@
-﻿using HospitalManagement;
+﻿using HospitalManagementWinform;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,6 @@ namespace HospitalManagementWinform
     {
         private Action<Appointment> _onSaveAction;
 
-        
         public AppointmentForm(Appointment appointment, List<Patient> patientsAvailable, List<Doctor> doctorsAvailable, Action<Appointment> onSaveAction)
         {
             InitializeComponent();
@@ -23,8 +22,8 @@ namespace HospitalManagementWinform
             doctorSelector.DataSource = doctorsAvailable;
             if(appointment != null)
             {
-                patientSelector.SelectedItem = appointment.Patient.Name;
-                doctorSelector.SelectedItem = appointment.Patient.DoctorAssigned;
+                patientSelector.SelectedItem = appointment.patient.Name;
+                 doctorSelector.SelectedItem = appointment.patient.DoctorAssigned;
                 dateBox.Value = appointment.Date;
             }
             _onSaveAction = onSaveAction;

@@ -192,7 +192,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "HospitalPage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "Form1";
+            this.Text = "HOSPITAL MANAGEMENT";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();

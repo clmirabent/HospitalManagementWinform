@@ -1,5 +1,5 @@
-﻿using HospitalManagement;
-using System;
+﻿using System;
+using HospitalManagementWinform;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
