@@ -1,4 +1,5 @@
 ﻿using System;
+using HospitalManagementWinform;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,22 +10,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using HospitalManagement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HospitalManagementWinform
 {
     public partial class HospitalPage : Form
     {
-        private Hospital _hospital;
+        public Hospital _hospital;
 
         public HospitalPage()
         {
             InitializeComponent();
             _hospital = new Hospital();
             _hospital.AddDoctor(new Doctor($"Julio", 61, "DNI: 123456789T", "Specialty: Pediatria", "44356765"));
-            _hospital.AddDoctor(new Doctor($"Name: Marta", 38, "DNI: 987654321U", "Speciality: Terapia", "College Number: 0556795"));
-            _hospital.AddDoctor(new Doctor($"Name: Eduardo", 55, "DNI: 086660987U", "Speciality: Traumatologia", "College Number: 0556795"));
+            _hospital.AddDoctor(new Doctor($"Marta", 38, "DNI: 987654321U", "Speciality: Terapia", "College Number: 0556795"));
+            _hospital.AddDoctor(new Doctor($"Eduardo", 55, "DNI: 086660987U", "Speciality: Traumatologia", "College Number: 0556795"));
             
         }
 

@@ -1,4 +1,4 @@
-﻿using HospitalManagement;
+﻿using HospitalManagementWinform;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +30,7 @@ namespace HospitalManagementWinform
         {
             AppointmentForm form = new AppointmentForm(null, _hospital.Patients, _hospital.Doctors, appointment =>
             {
-                _hospital.TryAddAppointment(appointment.Patient, appointment);
+                _hospital.TryAddAppointment(appointment.patient, appointment);
                 _appointmentSource.ResetBindings(false);
             });
             form.ShowDialog();

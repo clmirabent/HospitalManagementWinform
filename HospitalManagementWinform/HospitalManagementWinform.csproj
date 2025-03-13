@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin staff.cs" />
     <Compile Include="AdminPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +72,11 @@
     <Compile Include="AppointmentForm.Designer.cs">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Appointment.cs" />
+    <Compile Include="Clinical history.cs" />
+    <Compile Include="Doctor.cs" />
+    <Compile Include="Hospital.cs" />
+    <Compile Include="Patient.cs" />
     <Compile Include="PatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,7 @@
     <Compile Include="DoctorForm.Designer.cs">
       <DependentUpon>DoctorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminForm.resx">
@@ -152,12 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\HospitalManagement\HospitalManagement\HospitalManagement.csproj">
-      <Project>{e2b82d00-237f-43fc-bf03-72599cb40e6f}</Project>
-      <Name>HospitalManagement</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

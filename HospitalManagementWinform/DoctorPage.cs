@@ -1,4 +1,4 @@
-﻿using HospitalManagement;
+﻿using HospitalManagementWinform;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
